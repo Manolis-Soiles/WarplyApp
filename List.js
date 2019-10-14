@@ -3,19 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { FlatList, AppRegistry, StyleSheet, Text, TextInput, View, Button, ActivityIndicator } from 'react-native';
-import {fetchJson} from './src/fetchJson';
-import {getJsonError, getJson, getJsonPending} from './src/reducers';
+
 
 class List extends Component {
 
-    componentDidMount() {
-        console.log('mount')
-        console.log('Pending: ' + this.props.list.pending)
-        this.props.fetchJson();
-    }
-
     render() {
-
       if (this.props.list.pending){
         return(
           <View style={{flex: 1, padding: 20}}>
@@ -36,7 +28,6 @@ class List extends Component {
 }
 
 List.propTypes = {
-  fetchJson: PropTypes.func.isRequired,
   list: PropTypes.object.isRequired
 };
 
@@ -50,4 +41,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     fetchJson: fetchJson
 }, dispatch)
 */
-export default connect(mapStateToProps,{fetchJson})(List);
+export default connect(mapStateToProps, null)(List);

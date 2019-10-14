@@ -4,13 +4,14 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import List from './List.js';
+import Map from './Map.js';
 
 //Map is displayed
 class MapScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Map</Text>
+        <Map/>
       </View>
     );
   }
